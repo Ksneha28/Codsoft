@@ -79,7 +79,7 @@ def button_clear():
 button_1 = tk.Button(frame, text="C", command=button_clear)
 button_1.grid(row=1, column=0, padx=10, pady=10)
 
-button_2 = tk.Button(frame, text="^2", command=button_square)
+button_2 = tk.Button(frame, text="^2", command=button_squareroot)
 button_2.grid(row=1, column=1, padx=10, pady=10)
 
 button_3 = tk.Button(frame, text="/", command=button_divide)
