@@ -38,15 +38,15 @@ def button_divide():
     display.delete(0, tk.END)
     display.insert(0, str(num_1) + "/")
 
-def button_square():
+def button_squareroot():
     num_1 = display.get()
     try:
-        answer = int(num_1)**2
+        answer = int(num_1)**(1/2)
         display.delete(0, tk.END)
         display.insert(0, str(answer))
     except ValueError:
         display.delete(0, tk.END)
-        display.inser(0, "invalid")
+        display.insert(0, "invalid")
 
 def button_decimal():
     text = display.get()
@@ -79,7 +79,7 @@ def button_clear():
 button_1 = tk.Button(frame, text="C", command=button_clear)
 button_1.grid(row=1, column=0, padx=10, pady=10)
 
-button_2 = tk.Button(frame, text="^2", command=button_squareroot)
+button_2 = tk.Button(frame, text="^(1/2)", command=button_squareroot)
 button_2.grid(row=1, column=1, padx=10, pady=10)
 
 button_3 = tk.Button(frame, text="/", command=button_divide)
