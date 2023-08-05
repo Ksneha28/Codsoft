@@ -2,7 +2,7 @@ import tkinter as tk
 
 root = tk.Tk()
 root.title("TODO LIST APP")
-root.geometry("350x350")
+root.geometry("400x400")
 frame = tk.Frame()
 frame.pack(pady=20)
 
@@ -21,13 +21,17 @@ def submit_task():
     listbox.insert(tk.END, task)
 
 def edit_task():
-    task = listbox.get(tk.ACTIVE)
-    display_field.delete(0, tk.END)
-    display_field.insert(0, task)
-
+    task_index = listbox.curselection()
+    if task_index:
+        edit_task = display.get()
+        if edit_task:
+            listbox.delete(task_index)
+            listbox.insert(task_index, edit_task)
+            display.delete(0, tk.END)
+    
 def delete_task():
-    task = listbox.get(tk.ACTIVE)
-    listbox.delete(tk.ACTIVE)
+    task_index = listbox.curselection()
+    listbox.delete(task_index)
 
 #creating Buttons
 submit_button = tk.Button(frame, text="SUBMIT", command=submit_task)
