@@ -51,7 +51,18 @@ def button_squareroot():
 def button_decimal():
     text = display.get()
     if "." not in text:
-        display.insert(tk.end, ".")
+        display.delete(0, tk.END)
+        display.insert(0, str(cur) + ".")
+
+def button_factorial():
+     num_1 = display.get()
+     num_1 = int(num_1)
+     fac = 1
+     for number in range(1, num_1+1):
+        fac = fac*number
+    answer = fac
+    display.delete(0, tk.END)
+    display.insert(0, str(answer))
 
 def button_round():
     num_1 = display.get()
